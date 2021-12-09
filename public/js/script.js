@@ -1,7 +1,7 @@
 // STARTING CODE FOR THE startThreeJS() FUNCTION TAKEN FROM https://codepen.io/shshaw/pen/yPPOEg and then heavily modified
 
 window.onload = function () {
-  let clientSocket = io.connect("https://localhost:31");
+  let clientSocket = io.connect("https://localhost");
   let socketId = -1;
 
   clientSocket.on("connect", function (data) {
