@@ -32,6 +32,7 @@ let tilesetSchema = new Schema({
 let Tile = mongoose.model("Tile", tilesetSchema);
 
 app.set("port", process.env.PORT || 5000);
+app.set("PORT", process.env.PORT || 5000);
 
 let express = require("express");
 const portNumber = 5000;
