@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hexaia</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/svg" href="assets/img/favicon.svg" />
+
+    <script src="js/three.js"></script>
+    <script src="https://unpkg.com/three@0.87.1/build/three.js"></script>
+    <script src="https://unpkg.com/three@0.87.1/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.87.1/examples/js/controls/FlyControls.js"></script>
+    <script src="https://unpkg.com/three@0.87.1/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="titleScreen">
+      <h1>Hexaia</h1>
+      <p>Please enter your username</p>
+
+      <div class="form input" action="index.html">
+        <input type="text" name="username" placeholder="Username" />
+        <button type="submit" name="submitUsername">
+          <img src="assets/img/checkmark.svg" alt="Enter" />
+        </button>
+      </div>
+    </div>
+
+    <header>
+      <h2>Hexaia</h2>
+      <h3>TheUserName</h3>
+    </header>
+
+    <div class="tools transitioning">
+      <div class="tool" data-index="0">
+        <img
+          src="assets/img/select.svg"
+          alt="Selection Tool"
+          class="hidden removed"
+        />
+        <img src="assets/img/select-full.svg" alt="Selection Tool" />
+      </div>
+      <div class="tool" data-index="1">
+        <img src="assets/img/tile.svg" alt="Tile Tool" />
+        <img
+          src="assets/img/tile-full.svg"
+          alt="Tile Tool"
+          class="hidden removed"
+        />
+      </div>
+      <div class="tool" data-index="2">
+        <img src="assets/img/territory.svg" alt="Territory Tool" />
+        <img
+          src="assets/img/territory-full.svg"
+          alt="Territory Tool"
+          class="hidden removed"
+        />
+      </div>
+      <div class="tool" data-index="3">
+        <img src="assets/img/palette.svg" alt="Palette Tool" />
+        <img
+          src="assets/img/palette-full.svg"
+          alt="Palette Tool"
+          class="hidden removed"
+        />
+      </div>
+      <div class="tool" data-index="4">
+        <img src="assets/img/population.svg" alt="Population Tool" />
+        <img
+          src="assets/img/population-full.svg"
+          alt="Population Tool"
+          class="hidden removed"
+        />
+      </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="currency">
+      <p>9</p>
+      <img src="assets/img/currency.png" alt="Currency" />
+    </div>
+
+    <div class="popup">
+      <div class="paintTool">
+        <img src="assets/img/paintTool.svg" alt="Paint" />
+        <div class="color1"></div>
+        <div class="color2"></div>
+        <div class="color3"></div>
+        <div class="clear">
+          <img src="assets/img/clear.svg" alt="Clear" />
+        </div>
+      </div>
+
+      <div class="territoryTool">
+        <img src="assets/img/territoryTool.svg" alt="Claim" />
+        <p class="cost">5</p>
+        <div class="confirm">
+          <img src="assets/img/confirm.svg" alt="Confirm" />
+        </div>
+        <div class="cancel">
+          <img src="assets/img/clear.svg" alt="Cancel" />
+        </div>
+      </div>
+      <div class="arrow"></div>
+    </div>
+
+    <div class="tileSelection transitioning">
+      <div class="tileTypes transitioning">
+        <div class="tileType mountain">
+          <img
+            src="assets/img/mountainTile.svg"
+            alt="Mountain"
+            class="mountain"
+            data-path="../assets/models/mountain.gltf"
+            data-cost="3"
+          />
+          <p>3</p>
+        </div>
+        <div class="tileType forest">
+          <img
+            src="assets/img/forestTile.svg"
+            alt="Forest"
+            class="forest"
+            data-path="../assets/models/forest.gltf"
+            data-cost="2"
+          />
+          <p>2</p>
+        </div>
+        <div class="tileType water">
+          <img
+            src="assets/img/waterTile.svg"
+            alt="Water"
+            class="water"
+            data-path="../assets/models/water.gltf"
+            data-cost="1"
+          />
+          <p>1</p>
+        </div>
+        <div class="tileType desert">
+          <img
+            src="assets/img/desertTile.svg"
+            alt="Desert"
+            class="desert"
+            data-path="../assets/models/desert.gltf"
+            data-cost="1"
+          />
+          <p>1</p>
+        </div>
+      </div>
+      <div class="selectionMarker"></div>
+    </div>
+  </body>
+</html>
