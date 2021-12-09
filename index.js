@@ -32,10 +32,9 @@ let tilesetSchema = new Schema({
 let Tile = mongoose.model("Tile", tilesetSchema);
 
 let express = require("express");
-const portNumber = process.env.PORT || 8080;
+const portNumber = process.env.PORT || 8081;
 let app = express(); //make an insatnce of express
-app.set("port", process.env.PORT || 80);
-app.set("PORT", process.env.PORT || 80);
+
 let httpServer = require("http").createServer(app);
 // create a server (using the Express framework object)
 // declare io which mounts to our httpServer object (runs on top ... )
