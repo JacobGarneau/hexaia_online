@@ -32,7 +32,7 @@ let tilesetSchema = new Schema({
 let Tile = mongoose.model("Tile", tilesetSchema);
 
 let express = require("express");
-const portNumber = 80;
+const portNumber = 443;
 let app = express(); //make an insatnce of express
 app.set("port", process.env.PORT || 80);
 app.set("PORT", process.env.PORT || 80);
@@ -41,7 +41,7 @@ let httpServer = require("http").createServer(app);
 // declare io which mounts to our httpServer object (runs on top ... )
 let io = require("socket.io")(httpServer, {
   cors: {
-    origin: "http://0.0.0.0:80",
+    origin: "http://0.0.0.0:443",
     credentials: true,
   },
 });
