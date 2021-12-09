@@ -39,7 +39,7 @@ let httpServer = require("http").createServer(app);
 // declare io which mounts to our httpServer object (runs on top ... )
 let io = require("socket.io")(httpServer, {
   cors: {
-    origin: "http://localhost:5000",
+    origin: "http://0.0.0.0:5000",
     credentials: true,
   },
 });
