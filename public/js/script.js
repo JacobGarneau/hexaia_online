@@ -1,7 +1,9 @@
 // STARTING CODE FOR THE startThreeJS() FUNCTION TAKEN FROM https://codepen.io/shshaw/pen/yPPOEg and then heavily modified
 
 window.onload = function () {
-  let clientSocket = io.connect("https://0.0.0.0:8081");
+  let clientSocket = io.connect(
+    "https://shrouded-cliffs-18042.herokuapp.com/:8081"
+  );
   let socketId = -1;
 
   clientSocket.on("connect", function (data) {
